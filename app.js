@@ -138,6 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.addEventListener('click', () => {
             navList.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
+            
+            // Lock/Unlock scroll
+            if (navList.classList.contains('nav-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'initial';
+            }
         });
     }
 
@@ -147,7 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (navList.classList.contains('nav-active')) {
                 navList.classList.remove('nav-active');
                 burger.classList.remove('toggle');
+                document.body.style.overflow = 'initial';
             }
         });
     });
+
 });
